@@ -91,7 +91,8 @@ module Paperclip
                                            resource:     'b',
                                            permissions:  'r',
                                            start:        (Time.now - (5 * 60)).utc.iso8601,
-                                           expiry:       (Time.now + time).utc.iso8601
+                                           expiry:       (Time.now + time).utc.iso8601,
+                                           protocol:     azure_credentials[:protocol] || 'https,http'
         else
           url(style_name)
         end
